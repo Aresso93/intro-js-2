@@ -28,16 +28,29 @@
 //     }
 // }
 
+// const pluto = isEven(27);
+
+// console.log (pluto);
+
 // function pow(base, exponent){
 //     const result = base ** exponent;
 //     return result;
 // }
+
+// const output = pow (2, 3);
+
+// console.log (output)
 
 // function lastCharUpperCase(selectedString){
 //     const char = selectedString[selectedString.length - 1];
 //     const charUpperCase = char.toUpperCase();
 //     return charUpperCase;
 // }
+
+
+// const steve = lastCharUpperCase('steve');
+
+// console.log (steve)
 
 // //pippo  l=5
 // //01234
@@ -57,7 +70,7 @@
 
 // logMultipleTimes('pizza', 100)
 
-// const pluto = isEven(27);
+// 
 
 // console.log(pluto);
 
@@ -112,7 +125,6 @@
 //     console.log('parametro 1', parameter1);
 //     console.log('parametro 2', parameter2);
 // }
-
 // logParameters('pippo', 5);
 
 // logParameters(27);
@@ -173,6 +185,20 @@
 //   che non faccia uso dell' operatore '**'
 //   ne della libreria Math
 
+// function pow (b, e) {
+//     const result = (b * b * b);
+// }
+
+
+
+// pow (3, 4)
+
+//base * base esponente volte
+
+// function pow(base, exponent){
+//     const result = base ** exponent;
+//     return result;
+
 
 //2) definire una funzione 'correctCase' che
 //   prende in input una stringa e la restituisce
@@ -184,6 +210,20 @@
 //3) defininire una funzione 'min' che dati due numeri
 //   restituisca il minore
 
+//SONO TROPPO BASATO FUNZIONA
+
+function min (firstNumber, secondNumber) {
+    if (firstNumber < secondNumber) {
+        return firstNumber;
+    } else {
+        return secondNumber;       
+    }
+    
+}
+
+min (38, 56);
+
+console.log (min (6, 12));
 
 //4) definire una funzione 'clamp' che prende come parametri
 //   tre numeri: valore, massimo e minimo.
@@ -206,15 +246,65 @@
 //   'nel mezzo del cammin di nostra vita' = 'nel mezzo del cammin...'
 
 
+
+
+// function ellipse (longString = prompt, limit = 20) {
+//         return longString.substring(0, limit);
+    
+//     }
+
+    
+
+let longString = prompt ('scrivimi qualcosa');
+
+function ellipse (longString = ' ', limit = 20) {
+
+if (longstring.length > 20) {
+    return longString.substring(0, limit) + '...';
+} else {
+    return longString;
+}
+
+}
+
+ellipse (longString);
+
+
+// console.log (ellipse('In the first age, in the first battle, when the shadows first lengthened... one stood, burnt by the embers of Armageddon') + '...') 
+
+// function limit (string = '', limit = 0) {  
+//     return string.substring(0, limit)
+//   }
+  
+//   const greeting = limit('Hello Marcus', 6)  
+
+  
+//   const greeting = limit('Hello Marcus', 100) 
+
+
 //7) definire una funzione reverseString che data una stringa
 //   la restituisca al contrario
 
 //   'casa rosa' => 'asor asac'
 
 
+// function reverseString ()
 
 
+//PURE QUESTO LET'S GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
+function clamp (valore, massimo, minimo) {
 
-
-
+    if (valore < minimo) {
+        return minimo;
+    } else if (valore > massimo) {
+        return massimo;
+    }
+    else { 
+        return valore;
+    
+    }
+    }
+    
+    
+    console.log (clamp (10, 100, 1));
