@@ -108,11 +108,18 @@
 
 // CICLI NESTATI--------------------------------
 
-// for (let i = 0; i < 10; i++) {
-//     for (let j = 0; j < 10; j++) {
+
+// console.log('inizio programma');
+
+// for (let i = 0; i < 4; i++) {
+//     console.log('inizio riga');
+//     for (let j = 0; j < 4; j++) {
 //         console.log('riga: ' + i + ', colonna: ' + j);
 //     }
+//     console.log('fine riga');
 // }
+
+// console.log('fine programma');
 
 
 // CAPITOLO 2 ES 1-------------------
@@ -167,27 +174,109 @@
 
 // VERSIONE MENO EASY
 
-const size = 4;
+// const size = 3;
 
-let chessboard = '';
+// let chessboard = '';
 
-for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-        // se i è pari {
-            // se j è pari {
-                //aggiungo a chessboard uno spazio
-            //} altrimenti {
-                //aggiungo a chessboard un cancelletto
-            //}
-        //} altrimenti {
-            // se j è pari {
-                //aggiungo a chessboard un cancelletto
-            //} altrimenti {
-                //aggiungo a chessboard uno spazio
-            //}
-        //}
-    }
-    //aggiungo a chessboard uno \n
-}
+// for (let i = 0; i < size; i++) {
+//     for (let j = 0; j < size; j++) {
+//         if (i % 2 === 0) {
+//             if (j % 2 === 0) {
+//                 chessboard = chessboard + '□'; 
+//             } else {
+//                 chessboard = chessboard + '■'
+//             }
+//         } else {
+//             if (j % 2 === 0) {
+//                 chessboard = chessboard + '■'
+//             } else {
+//                 chessboard = chessboard + '□'; 
+//             }
+//         }
+//         // se i è pari {
+//             // se j è pari {
+//                 //aggiungo a chessboard uno spazio
+//             //} altrimenti {
+//                 //aggiungo a chessboard un cancelletto
+//             //}
+//         //} altrimenti {
+//             // se j è pari {
+//                 //aggiungo a chessboard un cancelletto
+//             //} altrimenti {
+//                 //aggiungo a chessboard uno spazio
+//             //}
+//         //}
+//     }
+//     chessboard = chessboard + '\n'
+//     //aggiungo a chessboard uno \n
+// }
 
-console.log(chessboard);
+// console.log(chessboard);
+
+// const size = 3;
+
+// let chessboard = '';
+
+// for (let i = 0; i < size; i++) {
+//     for (let j = 0; j < size; j++) {
+//         // if (i % 2 === 0 && j % 2 === 0) {
+//         //     chessboard = chessboard + '□'; 
+//         // } else if (i % 2 === 0 && j % 2 !== 0){
+//         //     chessboard = chessboard + '■'
+//         // } else if (i % 2 !== 0 && j % 2 === 0){
+//         //     chessboard = chessboard + '■'
+//         // } else if (i % 2 !== 0 && j % 2 !== 0){
+//         //     chessboard = chessboard + '□'; 
+//         // }
+
+//         if (i % 2 === 0 && j % 2 === 0) {
+//             chessboard = chessboard + '□'; 
+//         } else if (i % 2 !== 0 && j % 2 !== 0){
+//             chessboard = chessboard + '□'
+//         } else {
+//             chessboard = chessboard + '■'
+//         }
+        
+//     }
+//     chessboard = chessboard + '\n'
+// }
+
+// console.log(chessboard);
+
+
+// const size = 3;
+
+// let chessboard = '';
+
+// for (let i = 0; i < size; i++) {
+//     for (let j = 0; j < size; j++) {
+//         if ((i - j) % 2 === 0) {
+//             chessboard = chessboard + '□'; 
+//         }
+//         if ((i - j) % 2 !== 0) {
+//             chessboard = chessboard + '■'; 
+//         }
+//     }
+//     chessboard = chessboard + '\n'
+// }
+
+// console.log(chessboard);
+
+// const size = 3;
+
+// let chessboard = '';
+
+// for (let i = 0; i < size; i++) {
+//     for (let j = 0; j < size; j++) {
+//         const rowAndColumnEven = (i % 2 === 0 && j % 2 === 0);
+//         const rowAndColumnOdd = (i % 2 !== 0 && j % 2 !== 0);
+//         if (rowAndColumnEven || rowAndColumnOdd){
+//             chessboard = chessboard + '□'; 
+//         } else {
+//             chessboard = chessboard + '■'; 
+//         }
+//     }
+//     chessboard = chessboard + '\n'
+// }
+
+// console.log(chessboard);
