@@ -185,11 +185,18 @@
 //   che non faccia uso dell' operatore '**'
 //   ne della libreria Math
 
-// function pow (b, e) {
-//     const result = (b * b * b);
-// }
+function pow (base, exponent) {
 
+    let result = base;
 
+    for (let i = 1; i < exponent; i++) {
+        result = result * base;
+    }
+
+    return result;
+ }
+
+console.log ('power', pow (3, 4));
 
 // pow (3, 4)
 
@@ -207,10 +214,27 @@
 // 'la casa blu' => 'La casa blu'
 
 
+function correctCase (selectedString) {
+    if (selectedString === undefined) {         //se la stringa non è stata definita, ritorna stringa vuota (così capisco che c'è un errore)
+        return '';
+    }
+
+    const firstChar = selectedString[0];        //qui sto dicendo che il char che voglio è il primo
+    const firstCharUpper = firstChar.toUpperCase ();
+    const restOfTheString = selectedString.slice(1);           //slice prende tutto quello che c'è dal carattere che gli ho detto in poi. Se gli metto due parametri, taglia da uno all'altro
+    const newString = firstCharUpper + restOfTheString;     //abbiamo smontato la stringa per maiuscolarne una parte e l'abbiamo rimontata
+
+    return newString;
+}
+
+console.log (correctCase ('viva pippo'));
+
+
+
 //3) defininire una funzione 'min' che dati due numeri
 //   restituisca il minore
 
-//SONO TROPPO BASATO FUNZIONA
+//SONO TROPPO BASATO FUNZIONA (ok, corretto con Andrea ed era giusto)
 
 function min (firstNumber, secondNumber) {
     if (firstNumber < secondNumber) {
@@ -223,7 +247,15 @@ function min (firstNumber, secondNumber) {
 
 min (38, 56);
 
-console.log (min (6, 12));
+console.log ('min', min (6, 12));
+
+//esiste un'alternativa con l'operatore ternario
+
+//const minimum = firstNumber > secondNumber ? secondNumber : firstNumber;
+//return minimum;
+// dice che se la condizione firstNumber > secondNumber è vera, mi devi stampare secondNumber (primo membro dopo il ?), altrimenti (se è falsa), metti la seconda cosa dopo i :
+
+
 
 //4) definire una funzione 'clamp' che prende come parametri
 //   tre numeri: valore, massimo e minimo.
@@ -231,12 +263,51 @@ console.log (min (6, 12));
 //   se valore è maggiore di massimo, restituisce massimo
 //   altrimenti restituisce valore
 
+//PURE QUESTO LET'S GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+
+// function clamp (valore, massimo, minimo) {
+
+//     if (valore < minimo) {
+//         return minimo;
+//     } else if (valore > massimo) {
+//         return massimo;
+//     }
+//     else { 
+//         return valore;
+    
+//     }
+//     }
+    
+//     console.log ('clamp', clamp (10, 100, 1));
+
+function clamp (value, min, max) {
+
+    if (value < min) {
+        return min;
+    }
+
+    if (value > max) {
+        return max;
+    }
+
+    return value;
+
+}    
+
+console.log ('clamp', clamp (10, 100, 1));
+
+//questo è un modo alternativo per scriverla. Quello che succede è che leggere subito il return rende ridondante gli else e fa sì che si possano omettere. Non è necessariamente 
+//migliore, ma è più snello e compresso, quello sì. Se il mio codice legge il return, già il return gli dice di smettere di leggere il resto della funzione (quello che rende necessario mettere else if)
+
 //   v=12, min=20, max=100 => 20
 //   v=5, min=0, max=3 => 3
 //   v=10, min=1, max=100 => 10 
 
 //5) definire una funzione chessboard che prende come parametro
 //   'size' e stampa la scacchiera 
+
+
+//wrappare la griglia dell'altro esercizio in una funzione. Size sarà il parametro della funzione e, richiamando la funzione, uscirà la griglia di quella dimensione
 
 //6) definire una funzione 'ellipse' che prende come parametro una stringa
 //   se la stringa è minore di 20 caratteri la ritorna non modificata
@@ -246,7 +317,58 @@ console.log (min (6, 12));
 //   'nel mezzo del cammin di nostra vita' = 'nel mezzo del cammin...'
 
 
+function ellipse (selectedString) {
+    if (selectedString.length < 20) {
+        return selectedString;
+    } else {
 
+        const shortString = selectedString.slice (0, 20);
+
+        const ellipsedString = shortString + '...';
+    
+        return ellipsedString;
+    }
+
+}
+
+console.log ('ellipse', ellipse ('In the first age, in the first battle, when the shadows first lengthened... one stood, burnt by the embers of Armageddon'))
+
+//qui sotto ho fatto una funzione migliorata in cui non siamo più limitati a 20 caratteri, ma abbiamo aggiunto il parametro della size con default a 20 (non è obbligatorio)
+//quando la invoco, posso definire il secondo parametro (size) e decidere a quanti caratteri tagliare
+
+function ellipse (selectedString, size = 20) {
+    if (selectedString.length < size) {
+        return selectedString;
+    } else {
+
+        const shortString = selectedString.slice (0, 20);
+
+        const ellipsedString = shortString + '...';
+    
+        return ellipsedString;
+    }
+
+}
+
+console.log ('ellipse', ellipse ('In the first age, in the first battle, when the shadows first lengthened... one stood, burnt by the embers of Armageddon', 3))
+
+//questa versione ha in aggiunta un altro parametro che mi permette di scegiere io che cosa vedere alla fine della stringa, con i tre puntini come default
+
+function ellipse (selectedString, size = 20, endString = '...') {
+    if (selectedString.length < size) {
+        return selectedString;
+    } else {
+
+        const shortString = selectedString.slice (0, 20);
+
+        const ellipsedString = shortString + endString;
+    
+        return ellipsedString;
+    }
+
+}
+
+console.log ('ellipse', ellipse ('In the first age, in the first battle, when the shadows first lengthened... one stood, burnt by the embers of Armageddon', 3, ' blablabla'))
 
 // function ellipse (longString = prompt, limit = 20) {
 //         return longString.substring(0, limit);
@@ -255,19 +377,19 @@ console.log (min (6, 12));
 
     
 
-let longString = prompt ('scrivimi qualcosa');
+// let longString = prompt ('scrivimi qualcosa');
 
-function ellipse (longString = ' ', limit = 20) {
+// function ellipse (longString = ' ', limit = 20) {
 
-if (longstring.length > 20) {
-    return longString.substring(0, limit) + '...';
-} else {
-    return longString;
-}
+// if (longstring.length > 20) {
+//     return longString.substring(0, limit) + '...';
+// } else {
+//     return longString;
+// }
 
-}
+// }
 
-ellipse (longString);
+// ellipse (longString);
 
 
 // console.log (ellipse('In the first age, in the first battle, when the shadows first lengthened... one stood, burnt by the embers of Armageddon') + '...') 
@@ -288,23 +410,16 @@ ellipse (longString);
 //   'casa rosa' => 'asor asac'
 
 
-// function reverseString ()
+function stringReverse (selectedString) {
 
+    let newString = '';
 
-//PURE QUESTO LET'S GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-
-function clamp (valore, massimo, minimo) {
-
-    if (valore < minimo) {
-        return minimo;
-    } else if (valore > massimo) {
-        return massimo;
+    for (let i = (selectedString.length - 1); i >= 0 ; i--) {
+        const char = selectedString [i];
+        newString = newString + char;
     }
-    else { 
-        return valore;
-    
-    }
-    }
-    
-    
-    console.log (clamp (10, 100, 1));
+
+    return newString;
+}
+
+console.log ('reverse', stringReverse ('la casa rosa'))

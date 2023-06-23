@@ -178,21 +178,21 @@
 
 // let chessboard = '';
 
-// for (let i = 0; i < size; i++) {
-//     for (let j = 0; j < size; j++) {
-//         if (i % 2 === 0) {
-//             if (j % 2 === 0) {
-//                 chessboard = chessboard + '□'; 
-//             } else {
-//                 chessboard = chessboard + '■'
-//             }
-//         } else {
-//             if (j % 2 === 0) {
-//                 chessboard = chessboard + '■'
-//             } else {
-//                 chessboard = chessboard + '□'; 
-//             }
-//         }
+//  for (let i = 0; i < size; i++) {
+//      for (let j = 0; j < size; j++) {
+//          if (i % 2 === 0) {
+//              if (j % 2 === 0) {
+//                  chessboard = chessboard + '□'; 
+//              } else {
+//                  chessboard = chessboard + '■'
+//              }
+//          } else {
+//              if (j % 2 === 0) {
+//                  chessboard = chessboard + '■'
+//              } else {
+//                  chessboard = chessboard + '□'; 
+//              }
+//          }
 //         // se i è pari {
 //             // se j è pari {
 //                 //aggiungo a chessboard uno spazio
